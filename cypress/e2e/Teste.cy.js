@@ -1,8 +1,9 @@
 /// <reference types='cypress'/>
 
 describe('Teste - Formulário', () => {
-  it('Preencher campos com sucesso', () => {
+  it.only('Preencher campos com sucesso', () => {
     cy.visit('https://testautomationpractice.blogspot.com/')
+    Cy.contains('Automation Testing Practice').should('be.visible')
     cy.get('#name').type('Teste')
     cy.get('input[placeholder="Enter EMail"]').type('teste@gmail.com')
     cy.get('#phone').type('9865684235')
@@ -18,10 +19,12 @@ describe('Teste - Formulário', () => {
     cy.get('#singleFileInput').should('have.value','C:\\fakepath\\cypress\\fixtures\\imgTeste.png')
 
   })
-  it.only('Validar botão Enter', () =>{
+  it('Validar botão Enter', () =>{
   cy.visit('https://testautomationpractice.blogspot.com/')
   cy.get('button[name="start"]').click()
   cy.get('button[name="stop"]').should('be.visible')
+  cy.contains('STOP').should('be.visible')
+  Cy.contains('button', 'STOP').click()
   
   })
 
