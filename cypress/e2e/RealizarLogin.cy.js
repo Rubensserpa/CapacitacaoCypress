@@ -14,7 +14,7 @@ describe ('Realizar Login',() => {
         Login.acessarURL()
         Login.preencherUsername('standard_user')
         Login.clicarEmLogin()
-       Login.validarMensagemDeErro('Epic sadface: Password is required')
+        Login.validarMensagemDeErro('Epic sadface: Password is required')
         Login.validarComContains('Password is required')
                
     }) 
@@ -22,7 +22,7 @@ describe ('Realizar Login',() => {
         Login.acessarURL()
         Login.preencherUsername()
         Login.clicarEmLogin()
-       Login.validarMensagemDeErro('Epic sadface: Password is required')
+        Login.validarMensagemDeErro('Epic sadface: Password is required')
         Login.validarComContains('Username is required')
 })
 
